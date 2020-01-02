@@ -4,24 +4,24 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:61483",
-      "sslPort": 44395
+      "applicationUrl": "http://localhost:54221",
+      "sslPort": 44350
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "gateway",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SmCty.Framework.Common.APIGateway.Web": {
+    "SignalRClient": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/dummy",
-      "applicationUrl": "https://localhost:7001;http://localhost:7000",
+      "launchBrowser": false,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
