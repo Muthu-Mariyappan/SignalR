@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
@@ -10,7 +10,7 @@ namespace SignalRClient.Hub
         public async Task SosHandler(string message)
         {
             await Clients.All.SendAsync("SOSMessages", message);
-            Debug.WriteLine("Hub is called with message : "+message);
+            Console.WriteLine("Hub is called with message : "+message);
         }
     }
 }
