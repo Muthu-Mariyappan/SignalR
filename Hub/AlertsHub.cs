@@ -7,9 +7,9 @@ namespace SignalRClient.Hub
     
     public class AlertsHub:Microsoft.AspNetCore.SignalR.Hub
     {
-        public async Task SosHandler(string message)
+        public async Task SosHandler(string topicName,string message)
         {
-            await Clients.All.SendAsync("SOSMessages", message);
+            await Clients.All.SendAsync(topicName, message);
             Console.WriteLine("Hub is called with message : "+message);
         }
     }

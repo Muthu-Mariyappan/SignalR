@@ -12,15 +12,17 @@ namespace SignalRClient.Service
         HubConnection _connection;
         public IConfiguration Configuration { get; }
 
-        private readonly string _sosHandler;
         private readonly string _hubUrl;
+        private readonly string _sosHandler;
+        private readonly string _topicName;
 
         public SosClient(IConfiguration configuration)
         {
             Configuration = configuration;
             _hubUrl = Configuration.GetValue<String>("SignalRHubURL");
             _sosHandler = Configuration.GetValue<String>("SosHandlerName");
-            Debug.WriteLine(_hubUrl);
+            _topicName = Configuration.GetValue<String>("SosTopicName");
+            Console.WriteLine("From Sos Client::: HubURL:"+_hubUrl+" || SOSHandlerName:"+_sosHandler+" || TopicName:"+_topicName);
         }
 
         public async Task Connect()
@@ -48,7 +50,7 @@ namespace SignalRClient.Service
 
         public async Task PushSosToHub(String emergencyInfo)
         {
-            await _connection.SendAsync(_sosHandler, emergencyInfo);
+            await _connection.SendAsync(_sosHandler, _topicName, emergencyInfo);
         }
 
     }
