@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using SignalRClient.Models;
 using SignalRClient.Service;
 
 namespace SignalRClient.Controllers
@@ -21,13 +22,10 @@ namespace SignalRClient.Controllers
         }
 
         [HttpGet]
-        public string dummy()
-        {
-            return "ok its working!";
-        }
-
+        public string dummy() => "ok its working";
+        
         [HttpPost("sos")]
-        public async Task SendSosAlert([FromBody] String emergencyInfo)
+        public async Task SendSosAlert(MapPopupMessage emergencyInfo)
         {
             await _sosClient.PushSosToHub(emergencyInfo);
         }

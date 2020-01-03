@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
+using SignalRClient.Models;
 
 
 namespace SignalRClient.Service
@@ -34,9 +35,9 @@ namespace SignalRClient.Service
 
         public void ReceiveMessagesFromHub(String topic)
         {
-            _connection.On<string>(topic, (message) =>
+            _connection.On<MapPopupMessage>(_topicName, (message) =>
             {
-                Debug.WriteLine(message);
+                Debug.WriteLine("||||||||||||||Received message is : "+message.Content);
             });
             _connection.Closed += ConnectionOnClosed;
         }
@@ -48,7 +49,7 @@ namespace SignalRClient.Service
             return Task.CompletedTask;
         }
 
-        public async Task PushSosToHub(String emergencyInfo)
+        public async Task PushSosToHub(MapPopupMessage emergencyInfo)
         {
             await _connection.SendAsync(_sosHandler, _topicName, emergencyInfo);
         }
