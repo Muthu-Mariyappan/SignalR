@@ -26,7 +26,7 @@ namespace SignalRClient
             services.AddControllers();
             services.AddCors(options => options.AddPolicy("AllowAll", builder =>
                 {
-                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().DisallowCredentials();
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials();
                 }));
             
             services.AddSwaggerGen(c =>
