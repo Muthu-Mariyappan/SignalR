@@ -11,12 +11,12 @@ namespace SignalRClient.Models
         public double Longitude { get; set; }
         public Dictionary<string,string> Content { get; set; }
 
-        string Serialize(MapPopupMessage value)
+        public string Serialize(MapPopupMessage value)
         {
             return JsonSerializer.Serialize<MapPopupMessage>(value);
         }
 
-        MapPopupMessage Deserialize(string json)
+        public MapPopupMessage Deserialize(string json)
         {
             var options = new JsonSerializerOptions
             {
