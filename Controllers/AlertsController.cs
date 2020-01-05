@@ -25,9 +25,10 @@ namespace SignalRClient.Controllers
         public string dummy() => "ok its working";
         
         [HttpPost("sos")]
-        public async Task SendSosAlert(MapPopupMessage emergencyInfo)
+        public async Task<MapPopupMessage> SendSosAlert(MapPopupMessage emergencyInfo)
         {
             await _sosClient.PushSosToHub(emergencyInfo);
+            return emergencyInfo;
         }
     }
 }

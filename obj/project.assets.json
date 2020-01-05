@@ -3876,11 +3876,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\H384493\\source\\repos\\Java\\GitHub\\temp\\SignalRClient.csproj",
+      "projectUniqueName": "C:\\Users\\H384493\\source\\repos\\Java\\GitHub\\SignalR\\SignalRClient.csproj",
       "projectName": "SignalRClient",
-      "projectPath": "C:\\Users\\H384493\\source\\repos\\Java\\GitHub\\temp\\SignalRClient.csproj",
+      "projectPath": "C:\\Users\\H384493\\source\\repos\\Java\\GitHub\\SignalR\\SignalRClient.csproj",
       "packagesPath": "C:\\Users\\H384493\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\H384493\\source\\repos\\Java\\GitHub\\temp\\obj\\",
+      "outputPath": "C:\\Users\\H384493\\source\\repos\\Java\\GitHub\\SignalR\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
